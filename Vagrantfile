@@ -5,6 +5,11 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, host: 8000, guest: 80
   config.vm.network :forwarded_port, host: 8001, guest: 8888
 
+  config.vm.provider :virtualbox do |vb|
+     # Use VBoxManage to customize the VM. For example to change memory:
+     vb.customize ["modifyvm", :id, "--memory", "2048"]
+  end
+
   ## For masterless, mount your salt file root
   config.vm.synced_folder "salt/roots/", "/srv/salt/"
 
