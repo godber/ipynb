@@ -16,6 +16,7 @@ ipynb-pkgs:
       - libjpeg8-dev
       - libatlas-base-dev
       - liblapack-dev
+      - libmysqlclient-dev
       - libxml2-dev
       - libxslt1-dev
       - uuid-dev
@@ -62,3 +63,17 @@ https://github.com/godber/ipython-profile_desertpy.git:
     - require:
       - user: ipynb
       - pkg: ipynb-pkgs
+
+https://github.com/desertpy/presentations.git:
+  git.latest:
+    - target: /home/ipynb/Workspace/desertpy_presentations
+    - runas: ipynb
+    - require:
+      - user: ipynb
+      - pkg: ipynb-pkgs
+
+/home/ipynb/pandas_examples:
+  file.symlink:
+    - target: /home/ipynb/Workspace/desertpy_presentations/pandas-intro-godber/code
+    - require:
+      - git: https://github.com/desertpy/presentations.git
