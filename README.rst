@@ -13,13 +13,14 @@ TODO::
 Launching IPython Notebook After Boot
 =====================================
 
-```
-# switch to root
-sudo -i
-# switch to ipynb user
-su - ipynb
-# activate the python virtualenv
-. /home/ipynb/ipynb-venv/bin/activate
-# Launch with the desertpy profile
-ipython notebook --profile=desertpy
-```
+::
+
+
+  # switch to root
+  sudo -i
+  # switch to ipynb user
+  su - ipynb
+  # activate the python virtualenv
+  . /home/ipynb/ipynb-venv/bin/activate
+  # Launch with the desertpy profile
+  ipython notebook --profile=desertpy
